@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kijiji Ad Results</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- External CSS File -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="card" id="ad-container">
+            <div class="card-header">
+                <div>
+                    <input type="radio" id="locationBarrie" name="location" value="1700006" checked>
+                    <label for="locationBarrie">Barrie</label>
+                
+                    <input type="radio" id="locationKeswick" name="location" value="1700274">
+                    <label for="locationKeswick">Keswick</label>
+                
+                    <input type="radio" id="locationOntario" name="location" value="9004">
+                    <label for="locationOntario">Ontario</label>
+                
+                    <input type="radio" id="locationCanada" name="location" value="0">
+                    <label for="locationCanada">Canada</label>
+                </div>
+                <div>
+                    <input type="radio" id="queryNintendo" name="query" value="Nintendo" checked>
+                    <label for="queryNintendo">Nintendo</label>
+                
+                    <input type="radio" id="querySNES" name="query" value="SNES">
+                    <label for="querySNES">SNES</label>
+                
+                    <input type="radio" id="queryNES" name="query" value="NES">
+                    <label for="queryNES">NES</label>
+                
+                    <input type="radio" id="queryN64" name="query" value="N64">
+                    <label for="queryN64">N64</label>
+                
+                    <input type="radio" id="queryGame" name="query" value="GAME">
+                    <label for="queryGame">GAME</label>
+                </div>
+                Kijiji Ad Results
+            </div>
+            <ul class="list-group list-group-flush" id="ad-results">
+                <!-- Sample Ad result with collapsible content -->
+                <li class="list-group-item">
+                    <a href="#adDetails1" data-toggle="collapse">Loading...</a>
+                    <div id="adDetails1" class="collapse">
+                        Ad details go here.
+                    </div>
+                </li>
+                <!-- Repeat the above structure for more ads -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript at the end of the body for optimized loading -->
+    <!-- jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Your custom script to load and display ads -->
+    <script src="script.js"></script>
+</body>
+</html>

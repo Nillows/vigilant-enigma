@@ -1,0 +1,76 @@
+/* styles.css */
+#ad-container {
+    max-height: 66vh; /* 66% of the viewport height */
+    overflow-y: auto; /* Add vertical scrollbar */
+}
+
+.container {
+    width: 100%;
+    margin-left: 0; /* Align to the far left */
+    padding-left: 0; /* Remove default padding if necessary */
+}
+
+.feature-class {
+    padding: 5px;
+    background-color: #eee; /* Light grey background */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow the items to wrap as needed */
+    padding: 10px; /* Add padding for spacing */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: auto; /* Adjust height automatically to fit content */
+    min-height: 120px; /* Set a minimum height */
+}
+
+.scrollable-section {
+    margin-top: 140px; /* You may need to increase this value to avoid overlap */
+    overflow-y: auto;
+    height: calc(100vh - 140px); /* Make sure this matches the updated margin-top value */
+}
+
+.form-container {
+    margin-top: 75px; /* Add padding for spacing */
+
+
+}
+
+
+
+
+
+
+
+
+.game-info {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.game-info h4 {
+    color: #333;
+    font-size: 16px;
+}
+
+.game-info p, .game-info a {
+    font-size: 14px;
+    color: #666;
+}
+
+.game-info a {
+    text-decoration: none;
+    color: #007BFF; /* Bootstrap primary color */
+}

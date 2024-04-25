@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kijiji Ad Results</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- External CSS File -->
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 1000;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .scrollable-list {
+            margin-top: 140px; /* Adjust based on the actual height of the header */
+            overflow-y: auto;
+            height: calc(100vh - 140px); /* Adjust based on the actual height of the header */
+        }
+        .container {
+            padding-top: 20px; /* Ensures padding when scrolled to top */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid mt-4">
+        <div class="fixed-header">
+            <div class="card-header">
+                <div>
+                    <input type="radio" id="locationBarrie" name="location" value="1700006" checked>
+                    <label for="locationBarrie">Barrie</label>
+
+                    <input type="radio" id="locationKeswick" name="location" value="1700274">
+                    <label for="locationKeswick">Keswick</label>
+
+                    <input type="radio" id="locationOntario" name="location" value="9004">
+                    <label for="locationOntario">Ontario</label>
+
+                    <input type="radio" id="locationCanada" name="location" value="0">
+                    <label for="locationCanada">Canada</label>
+                </div>
+                <div>
+                    <input type="radio" id="queryNintendo" name="query" value="Nintendo" checked>
+                    <label for="queryNintendo">Nintendo</label>
+
+                    <input type="radio" id="querySNES" name="query" value="SNES">
+                    <label for="querySNES">SNES</label>
+
+                    <input type="radio" id="queryNES" name="query" value="NES">
+                    <label for="queryNES">NES</label>
+
+                    <input type="radio" id="queryN64" name="query" value="N64">
+                    <label for="queryN64">N64</label>
+
+                    <input type="radio" id="queryGame" name="query" value="GAME">
+                    <label for="queryGame">GAME</label>
+                </div>
+                Kijiji Ad Results
+            </div>
+        </div>
+        <div class="row"> <!-- Bootstrap row for two columns -->
+            <div class="col-6"> <!-- First column -->
+                <div class="card scrollable-list" id="ad-container">
+                    <ul class="list-group list-group-flush" id="ad-results">
+                        <li class="list-group-item">
+                            <a href="#adDetails" data-toggle="collapse">Loading...</a>
+                            <div id="adDetails" class="collapse">
+                                Ad details go here.
+                            </div>
+                        </li>
+                        <!-- Repeat for more ads -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6"> <!-- Second column -->
+                <div class="container">
+                    <h1>Search for Game Prices</h1>
+                    <div class="form-container">
+                        <form id="queryForm">
+                            <div class="form-group">
+                                <label for="gameTitle">Game Title:</label>
+                                <input type="text" class="form-control" id="gameTitle" name="gameTitle" placeholder="Enter game title">
+                            </div>
+                            <div class="form-group">
+                                <label>Game Console:</label>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="super-nintendo" name="console" value="super-nintendo">
+                                        <label for="super-nintendo">Super Nintendo</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="nes" name="console" value="nes">
+                                        <label for="nes">NES</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="nintendo-64" name="console" value="nintendo-64">
+                                        <label for="nintendo-64">Nintendo 64</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="gamecube" name="console" value="gamecube">
+                                        <label for="gamecube">GameCube</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="wii" name="console" value="wii">
+                                        <label for="wii">Wii</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="wii-u" name="console" value="wii-u">
+                                        <label for="wii-u">Wii U</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="nintendo-switch" name="console" value="nintendo-switch">
+                                        <label for="nintendo-switch">Nintendo Switch</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="gameboy" name="console" value="gameboy">
+                                        <label for="gameboy">GameBoy</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="gameboy-advance" name="console" value="gameboy-advance">
+                                        <label for="gameboy-advance">GameBoy Advance</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="nintendo-ds" name="console" value="nintendo-ds">
+                                        <label for="nintendo-ds">Nintendo DS</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="virtual-boy" name="console" value="virtual-boy">
+                                        <label for="virtual-boy">Virtual Boy</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="game-&-watch" name="console" value="game-&-watch">
+                                        <label for="game-&-watch">Game & Watch</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="playstation" name="console" value="playstation">
+                                        <label for="playstation">PlayStation</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="playstation-2" name="console" value="playstation-2">
+                                        <label for="playstation-2">PlayStation 2</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="playstation-3" name="console" value="playstation-3">
+                                        <label for="playstation-3">PlayStation 3</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="sega-master-system" name="console" value="sega-master-system">
+                                        <label for="sega-master-system">Sega Master System</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="sega-genesis" name="console" value="sega-genesis">
+                                        <label for="sega-genesis">Sega Genesis</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="sega-32x" name="console" value="sega-32x">
+                                        <label for="sega-32x">Sega 32X</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="sega-saturn" name="console" value="sega-saturn">
+                                        <label for="sega-saturn">Sega Saturn</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="sega-dreamcast" name="console" value="sega-dreamcast">
+                                        <label for="sega-dreamcast">Sega Dreamcast</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="sega-game-gear" name="console" value="sega-game-gear">
+                                        <label for="sega-game-gear">Sega Game Gear</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="xbox" name="console" value="xbox">
+                                        <label for="xbox">Xbox</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="xbox-360" name="console" value="xbox-360">
+                                        <label for="xbox-360">Xbox 360</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="xbox-one" name="console" value="xbox-one">
+                                        <label for="xbox-one">Xbox One</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="atari-2600" name="console" value="atari-2600">
+                                        <label for="atari-2600">Atari 2600</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="atari-5200" name="console" value="atari-5200">
+                                        <label for="atari-5200">Atari 5200</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" id="allConsoles" name="console" value="all">
+                                        <label for="allConsoles">All Consoles</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-primary" onclick="submitQuery()">Search</button>
+                        </form>
+                    </div>
+                    <div id="results">
+                        <!-- Results will appear here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript at the end of the body for optimized loading -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Your custom script to load and display ads -->
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+</body>
+</html>
